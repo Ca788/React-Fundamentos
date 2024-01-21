@@ -1,14 +1,14 @@
-import React, { useState, useMemo } from "react";
-
+import React, { useState, useMemo, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-
 import GlobalStyle from "./styles/global";
 import Layout from "./components/Layout";
-
 import themes from "./styles/themes";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const savedTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(
+    savedTheme ? JSON.parse(savedTheme) : "dark"
+  );
 
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.dark;
@@ -17,6 +17,10 @@ function App() {
   function handleToggleTheme() {
     setTheme((prevState) => (prevState === "dark" ? "light" : "dark"));
   }
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   return (
     <>
