@@ -1,0 +1,5 @@
+# Ignorar o arquivo de configuração do Webpack
+webpack.config.js
+
+# Ignorar a pasta node_modules
+node_modules/
