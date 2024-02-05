@@ -37,10 +37,8 @@ function App() {
     <>
       <ThemeProvider theme={currentTheme}>
         <GlobalStyle />
-        <button onClick={handleToggleTheme}>Change theme</button>
-        {theme === "dark" && (
-          <Layout onToggleTheme={handleToggleTheme} selectedTheme={theme} />
-        )}
+
+        <Layout onToggleTheme={handleToggleTheme} selectedTheme={theme} />
       </ThemeProvider>
     </>
   );
