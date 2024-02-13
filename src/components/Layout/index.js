@@ -15,10 +15,11 @@ export default function Layout({ onToggleTheme, selectedTheme }) {
       <NavWrapper>
         <Link to="/">Home</Link>
         <Link to="/posts">Posts</Link>
+        <Link to="/posts/82723872873823">Posts Id</Link>
       </NavWrapper>
 
       <Routes />
-      <Footer onToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
+      {/*<Footer onToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />*/}
     </BrowserRouter>
   );
 }
