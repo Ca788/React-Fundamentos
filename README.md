@@ -1,46 +1,7 @@
-## CRIAR ARQUIVO webpack.config.js
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+## Repositório de Estudos em Fundamentos de React
 
-module.exports = {
-  mode: "development",
-  entry: path.resolve(__dirname, "src", "index.js"),
-  output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "bundle[fullhash].js",
-    publicPath: "/",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-    }),
-    new CleanWebpackPlugin(),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: "babel-loader",
-      },
-      {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-            },
-          },
-        ],
-      },
-    ],
-  },
-  devServer: {
-    port: 8000,
-    historyApiFallback: true,
-  },
-};
+# Bem-vindo ao meu repositório de estudos sobre os fundamentos do React! 
+
+# Sinta-se à vontade para abrir issues ou enviar pull requests com correções, sugestões ou novos projetos de exemplo. Sua contribuição é bem-vinda!
+
